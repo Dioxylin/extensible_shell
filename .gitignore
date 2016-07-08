@@ -1,2 +1,9 @@
 *~
 autom4te.cache
+*.o
+es
+Makefile
+config.h
+*.swp
+config.h.in
+configure
