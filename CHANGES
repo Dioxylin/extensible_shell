@@ -1,6 +1,15 @@
 CHANGES		-*- mode: indented-text -*- ($Revision: 1.4 $)
 =======
 
+0.9beta to ???
+-------------------
+Compiles on at least one modern (as of mid-2016) Arch Linux system.
+
+Compiles with readline support by default.
+
+Added licensing to recognize original authors' intent on public domain
+dedication.
+
 0.9-alpha2 to 0.9beta
 ---------------------
 
