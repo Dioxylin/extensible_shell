@@ -1,3 +1,12 @@
+Building From Git
+-----------------
+
+Run:
+
+   % autoreconf -i
+
+And follow the instructions below.
+
 Basic Installation
 ------------------
 
