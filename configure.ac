@@ -2,8 +2,16 @@ dnl Process this file with autoconf to produce a configure script.
 AC_INIT(access.c)
 AC_CONFIG_HEADER(config.h)
 
+AC_DEFINE([ABUSED_GETENV], [0], [Description])
+AC_DEFINE([HAVE_DEV_FD], [0], [Description])
+AC_DEFINE([KERNEL_POUNDBANG], [0], [Description])
+AC_DEFINE([LIMIT_T], [0], [Description])
+AC_DEFINE([NO_VA_LIST_ASSIGN], [0], [Description])
+AC_DEFINE([SOLARIS], [0], [Description])
+AC_DEFINE([VOID_SIGNALS], [0], [description])
+
 dnl AC_CMDSTDOUT_CPP(variable, command, headers)
-AC_DEFUN(AC_CMDSTDOUT_CPP,
+AC_DEFUN([AC_CMDSTDOUT_CPP],
 [cat > conftest.$ac_ext <<EOF
 [#]line __oline__ "configure"
 #include "confdefs.h"
@@ -14,7 +22,7 @@ rm -f conftest*
 ])
 
 
-use_readline=no
+use_readline=yes
 use_editline=no
 
 AC_ARG_WITH(readline,
@@ -22,7 +30,7 @@ AC_ARG_WITH(readline,
 AC_ARG_WITH(editline,
 --with-editline		Use the Editline library, use_editline=yes)
 
-AC_CANONICAL_HOST
+#AC_CANONICAL_HOST
 
 case "$host" in
 	*sun5* | *solaris2*)
@@ -147,15 +155,15 @@ grep rlim_cur | sed -e 's/rlim_cur.*//' -e 's/^ //g' -e 's/^	//g' -e q,
 #endif],long))
 
 AC_CACHE_CHECK(for files to extract signal information from,
-SIGFILES,
-AC_CMDSTDOUT_CPP(SIGFILES,
+SIGFILES_cv_,
+AC_CMDSTDOUT_CPP(SIGFILES_cv_,
 [changequote(,)
 egrep '^#[ 	]+1[	 ]+' | sed 's/.*"\(.*\)".*/\1/' |sort -u |  
 grep '^/' |tr '\012' ' ' 
 changequote([,])],
 [#include <signal.h>], /usr/include/signal.h))
 
-AC_SUBST(SIGFILES)
+AC_SUBST(SIGFILES_cv_)
 
 AC_DEFINE_UNQUOTED(LIMIT_T, $es_cv_rlimit_t)
 

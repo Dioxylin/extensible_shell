@@ -31,6 +31,7 @@ exec_prefix	= @exec_prefix@
 mandir	= @mandir@
 bindir	= @bindir@
 srcdir  = @srcdir@
+datarootdir = @datarootdir@
 
 
 SHELL	= /bin/sh
@@ -62,7 +63,7 @@ OFILES	= access.o closure.o conv.o dict.o eval.o except.o fd.o gc.o glob.o \
 OTHER	= Makefile parse.y mksignal
 GEN	= esdump y.tab.c y.tab.h y.output token.h sigmsgs.c initial.c
 
-SIGFILES = @SIGFILES@
+SIGFILES = @SIGFILES_cv_@
 
 es	: ${OFILES} initial.o
 	${CC} -o es ${LDFLAGS} ${OFILES} initial.o ${LIBS}

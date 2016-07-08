@@ -2,7 +2,8 @@
 
 %{
 /* Some yaccs insist on including stdlib.h */
-#define _STDLIB_H
+//#define _STDLIB_H // why the fuck was this uncommented???
+#include <stdlib.h> // why the fuck was this not included???
 #include "es.h"
 #include "input.h"
 #include "syntax.h"
