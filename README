@@ -79,3 +79,15 @@ We would appreciate it if any distributions do credit the authors.
 Enjoy!
 
 -- Paul Haahr & Byron Rakitzis
+
+
+Addendum by Donald 'Dioxylin' Johnson:
+
+This code was last publicly released in 1997.  With some rudimentary
+understandings of copyright, I've decided to solidify this codebase's license
+by licensing it under the Creative Commons 0 license.  This should enable the
+code to be properly within the public domain in many jurisdictions, and
+alleviates the legal gray area that a public domain dedication carries.  
+
+Furthermore, I made it compileable on modern systems.  I may have broke things
+for really old and obscure systems, but this is an almost 20 year old codebase.
